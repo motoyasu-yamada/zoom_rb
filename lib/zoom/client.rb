@@ -36,7 +36,7 @@ module Zoom
     def oauth_request_headers
       token = Base64.encode64("#{Zoom.configuration.client_id}:#{Zoom.configuration.client_secret}").delete("\n")
       {
-        'Authorization' => "Basic #{auth_token}"
+        'Authorization' => "Basic #{token}"
       }.merge(headers)
     end
 
