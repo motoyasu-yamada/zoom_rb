@@ -45,11 +45,12 @@ module Zoom
   end
 
   class Configuration
-    attr_accessor :api_key, :api_secret, :timeout, :client_id
+    attr_accessor :api_key, :api_secret, :timeout, :client_id, :client_secret
 
     def initialize
       @api_key = @api_secret = 'xxx'
       @client_id = 'xxx'
+      @client_secret = 'xxx'
       @timeout = 15
     end
   end
