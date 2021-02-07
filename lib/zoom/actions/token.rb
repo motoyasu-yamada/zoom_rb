@@ -13,7 +13,7 @@ module Zoom
       def refresh_tokens(*args)
         options = Zoom::Params.new(Utils.extract_options!(args))
         options.require(:refresh_token)
-        response = self.class.post("/oauth/token?grant_type=refresh_token&client_id=#{oom.configuration.client_id}&refresh_token=#{options[:refresh_token]}", headers: oauth_request_headers, base_uri: 'https://zoom.us/')
+        response = self.class.post("/oauth/token?grant_type=refresh_token&client_id=#{Zoom.configuration.client_id}&refresh_token=#{options[:refresh_token]}", headers: oauth_request_headers, base_uri: 'https://zoom.us/')
         Utils.parse_response(response)
       end
 
